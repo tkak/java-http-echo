@@ -1,10 +1,10 @@
-package com.tkak.javahttpecho;
+package com.example.httpecho;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class JavaHttpEchoApplicationTests {
+class HttpEchoApplicationTests {
 
 	@Test
 	void contextLoads() {

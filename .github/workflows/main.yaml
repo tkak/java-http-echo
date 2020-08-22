@@ -1,4 +1,4 @@
-name: Java CI
+name: CI
 
 on: [push]
 
@@ -14,3 +14,5 @@ jobs:
           java-version: 1.11
       - name: Build with Gradle
         run: ./gradlew build
+      - name: Build container image with Gradle
+        run: ./gradlew :bootBuildImage

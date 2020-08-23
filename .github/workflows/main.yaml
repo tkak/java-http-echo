@@ -6,7 +6,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      SHA8: ${GITHUB_SHA::8}
+      SHA8: "${{ env.GITHUB_SHA::8 }}"
 
     steps:
       - uses: actions/checkout@v2
@@ -15,7 +15,7 @@ jobs:
         with:
           java-version: 1.11
       - name: Build container image with Gradle
-        run: ./gradlew :bootBuildImage --imageName=tkak/java-http-echo:${SHA8}
+        run: ./gradlew :bootBuildImage --imageName="tkak/java-http-echo:${SHA8}"
       - name: Publish to Registry
         uses: elgohr/Publish-Docker-Github-Action@master
         with:

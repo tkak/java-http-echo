@@ -15,7 +15,9 @@ jobs:
         with:
           java-version: 1.11
       - name: Build container image with Gradle
-        run: ./gradlew :bootBuildImage --imageName="tkak/java-http-echo:${SHA8}"
+        run: |
+          echo "${SHA8}"
+          ./gradlew :bootBuildImage --imageName="tkak/java-http-echo:${SHA8}"
       - name: Publish to Registry
         uses: elgohr/Publish-Docker-Github-Action@master
         with:

@@ -14,7 +14,7 @@ jobs:
           java-version: 1.11
       - name: Build container image with Gradle
         run: |
-          ./gradlew :bootBuildImage --imageName="tkak/java-http-echo:${{ github.sha }}"
+          ./gradlew :bootBuildImage --imageName="${{ github.actor }}/java-http-echo:${{ github.sha }}"
       - name: Publish to Registry
         run: |
           docker login -u ${{secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}

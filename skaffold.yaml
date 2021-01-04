@@ -1,0 +1,15 @@
+apiVersion: skaffold/v2beta10
+kind: Config
+metadata:
+  name: java-http-echo
+build:
+  artifacts:
+    - image: tkak/java-http-echo
+      buildpacks:
+        builder: paketobuildpacks/builder:base
+  tagPolicy:
+    gitCommit: {}
+deploy:
+  kubectl:
+    manifests:
+    - manifests/*.yaml

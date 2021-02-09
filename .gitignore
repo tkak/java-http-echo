@@ -34,3 +34,4 @@ out/
 .vscode/
 
 bin
+app.log
